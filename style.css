@@ -4,6 +4,13 @@
     padding: 0px;
 }
 
+.card{
+  width: 30vw;
+  height: 30vh;
+  margin-top: 10vh;
+  border: .1vh black solid;
+}
+
 .comida-container {
-  /* Estilos para el contenedor de la lista */
+ 
 }
