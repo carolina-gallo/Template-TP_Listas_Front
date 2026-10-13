@@ -8,6 +8,13 @@
 </head>
 <body>
     <header>
+      <select id="filtrosporcategoria">
+        <option value = "">Todas las Categorias</option>
+        <option value = "Parrilla">Todas las Categorias</option>
+        <option value = "Horno">Todas las Categorias</option>
+        <option value = "Guiso">Todas las Categorias</option>
+        <option value = "FRITO">Todas las Categorias</option>
+      </select>
       <!-- Para filtros y navegacion -->
     </header>
 
@@ -16,6 +23,21 @@
     </main>     
 
     <section class="addFood">
+      <form id="formdenuevacomida">
+        <label for="nombre"></label>
+        <input type="text" name="nombre" placeholder="Ingrese el nombre de su comida"> 
+
+        <label for="categoria"></label>
+        <input type="text" name="categoria" placeholder="Ingrese ssu categoria"> 
+
+        <label for="provincia"></label>
+        <input type="text" name="provincia" placeholder="Ingrese la provincia"> 
+
+        <label for="ingredientes"></label>
+        <input type="text" name="ingredientes" placeholder="Ingrese los ingredientes de la comida">
+        
+        <button type="submit">Crear comida</button>
+      </form>
       <!-- Para el form para agregar comida -->
     </section>
 
