@@ -5,12 +5,14 @@
 }
 
 .card{
-  width: 30vw;
-  height: 30vh;
+  width: 20%;
+  aspect-ratio: 1/1;
   margin-top: 10vh;
   border: .1vh black solid;
 }
 
 .comida-container {
-
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }

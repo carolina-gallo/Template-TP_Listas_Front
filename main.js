@@ -1,17 +1,18 @@
 /*
     Cargar comidas en memoria desde el JSON
 */
-fetch('./data/comidas.json')          // Ruta al archivo JSON
+fetch('./data/comidas-extended.json')          // Ruta al archivo JSON
   .then(response => response.json())  // Convertir la respuesta en JSON
   .then(data => {                     // Aquí tienes acceso al JSON en formato de objeto JS
     console.log('Comidas cargadas desde JSON:');
     console.log(data);    
     comidas = data; 
-    mostrarComidas(lista)                  // Asignar el JSON a la variable comidas
+    mostrarComidas(comidas)                  // Asignar el JSON a la variable comidas
   })
   .catch(error => {                   // Manejo de errores al leer el archivo JSON
     console.error('Error al leer el archivo JSON:', error);
   });
+
 
 let comidas = [];
 
@@ -49,7 +50,7 @@ function mostrarComidas (lista){
     <h2 class= "comida"> ${comida.nombre}</h2>
     <p class= "provincia"> ${comida.provincia}</p>
     <ul>
-    ${comida.ingredientes.map( ingrediente=> `<li>${ingrediente}</li>`)}
+    ${comida.ingredientes.map( ingrediente=> `<li>${ingrediente}</li>`).join('')}
     </ul>
   </article>
   `
@@ -78,15 +79,28 @@ agregarComidaForm.addEventListener("submit", (event) => {
 })
 
 const filtrosporcategoria = document.getElementById("filtrosporcategoria")
+const filtrosporProvincia = document.getElementById("filtrosporProvincia")
+const busqueda = document.getElementById("buscador")
 
-filtrosporcategoria.addEventListener("change", () =>{
-  
+function filtrar() {
   let comidasFiltradas = comidas.filter( comida => {
     return comida.categoria.includes(filtrosporcategoria.value)
+      && comida.provincia.includes(filtrosporProvincia.value)
   })
 
   mostrarComidas (comidasFiltradas)
+}
+
+function buscar() {
+  let comidasFiltradas = comidas.filter( comida => {
+    return comida.nombre.includes(busqueda.value.toLowerCase())
+      || comida.provincia.toLowerCase().includes(busqueda.value.toLowerCase())
+      || comida.categoria.toLowerCase().includes(busqueda.value.toLowerCase())
 })
 
-mostrarComidas()
+  mostrarComidas (comidasFiltradas)
+}
 
+filtrosporcategoria.addEventListener("change", filtrar)
+filtrosporProvincia.addEventListener("change", filtrar)
+busqueda.addEventListener("input", buscar)
