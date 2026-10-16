@@ -5,8 +5,9 @@
 }
 
 .card{
-  width: 20%;
+  width: 22%;
   aspect-ratio: 1/1;
+  background-color: #cfad9b;
   margin-top: 10vh;
   border: .1vh black solid;
 }
@@ -14,5 +15,13 @@
 .comida-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  justify-content: space-around;
+  align-items: flex-start;
+
+  background-color: #a16c50;
+}
+
+ul{
+  list-style: none;
+
 }

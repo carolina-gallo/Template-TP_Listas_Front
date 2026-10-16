@@ -41,7 +41,7 @@ mostrarComidas()
 */
 
 function mostrarComidas (lista){
-  
+    container.innerHTML=""
   lista.forEach (comida => {
     container.innerHTML +=
 `
@@ -66,15 +66,14 @@ agregarComidaForm.addEventListener("submit", (event) => {
   
   let nuevacomidita = {
     nombre: event.target.nombre.value,
-    provincia: event.target.provincia.nombre.value,
-    categoria: event.target.categoria.nombre.value,
-    ingredientes: event.target.ingreedientes.nombre.value.split(",")
+    provincia: event.target.provincia.value,
+    categoria: event.target.categoria.value,
+    ingredientes: event.target.ingredientes.value.split(",")
   }
 
   comidas.push (nuevacomidita)
 
   mostrarComidas (comidas)
-
   event.target.reset()
 })
 
@@ -88,12 +87,12 @@ function filtrar() {
       && comida.provincia.includes(filtrosporProvincia.value)
   })
 
-  mostrarComidas (comidasFiltradas)
+  mostrarComidas(comidasFiltradas)
 }
 
 function buscar() {
   let comidasFiltradas = comidas.filter( comida => {
-    return comida.nombre.includes(busqueda.value.toLowerCase())
+    return comida.nombre.toLowerCase().includes(busqueda.value.toLowerCase())
       || comida.provincia.toLowerCase().includes(busqueda.value.toLowerCase())
       || comida.categoria.toLowerCase().includes(busqueda.value.toLowerCase())
 })
