@@ -4,21 +4,22 @@
     padding: 0px;
 }
 
-.card{
-  width: 22%;
-  aspect-ratio: 1/1;
-  background-color: #cfad9b;
-  margin-top: 10vh;
-  border: .1vh black solid;
-}
-
 .comida-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: flex-start;
 
-  background-color: #a16c50;
+  background-color: #be8769;
+}
+
+
+.card{
+  width: 22%;
+  aspect-ratio: 1/1;
+  background-color: #eecab9;
+  margin-top: 10vh;
+  border: .1vh black solid;
 }
 
 ul{

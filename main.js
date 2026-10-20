@@ -4,10 +4,11 @@
 fetch('./data/comidas-extended.json')          // Ruta al archivo JSON
   .then(response => response.json())  // Convertir la respuesta en JSON
   .then(data => {                     // Aquí tienes acceso al JSON en formato de objeto JS
-    console.log('Comidas cargadas desde JSON:');
+    
     console.log(data);    
     comidas = data; 
     mostrarComidas(comidas)                  // Asignar el JSON a la variable comidas
+    actualizarFiltros()
   })
   .catch(error => {                   // Manejo de errores al leer el archivo JSON
     console.error('Error al leer el archivo JSON:', error);
@@ -59,23 +60,35 @@ function mostrarComidas (lista){
 
 const agregarComidaForm = document.getElementById("formdenuevacomida")
 
-agregarComidaForm.addEventListener("submit", (event) => {
+agregarComidaForm.addEventListener ("submit", (event) => {
 
   event.preventDefault()
   //alert("Comida agregada: " + event.target.nombre.value);
   
+  const ingredientesInputs = document.querySelectorAll (".ingrediente")
+  let ingredientes= []
+
+  ingredientesInputs.forEach(input => {
+    ingredientes.push(input.value);
+  })
+
   let nuevacomidita = {
     nombre: event.target.nombre.value,
     provincia: event.target.provincia.value,
     categoria: event.target.categoria.value,
-    ingredientes: event.target.ingredientes.value.split(",")
+    ingredientes: ingredientes
   }
 
   comidas.push (nuevacomidita)
 
   mostrarComidas (comidas)
+
+  ingredientesContainer.innerHTML = 
+  `<input type="text" class="ingrediente" placeholder="Agregar ingrediente" required>`
+   
+
   event.target.reset()
-})
+});
 
 const filtrosporcategoria = document.getElementById("filtrosporcategoria")
 const filtrosporProvincia = document.getElementById("filtrosporProvincia")
@@ -103,3 +116,27 @@ function buscar() {
 filtrosporcategoria.addEventListener("change", filtrar)
 filtrosporProvincia.addEventListener("change", filtrar)
 busqueda.addEventListener("input", buscar)
+
+
+const agregarIngredienteBtn = document.getElementById ("agregaringrediente")
+const ingredientesContainer = document.querySelector(".contenedor-ingredientes")
+
+agregarIngredienteBtn.addEventListener ("click", () => {
+
+  ingredientesContainer.innerHTML += 
+   '<input type="text" class="ingrediente" placeholder="Agregar ingrediente" required>'
+})
+
+function actualizarfiltros () {
+  let categorias = []
+  comidas.forEach (comida => {
+    if( !categorias.includes(comida.categoria)) {
+    categorias.push(comida.categoria)
+    }
+  })
+
+  categorias.forEach (categoria=> {
+  filtrosporcategoria.innerHTML += `<option value="${categoria}">${categoria}</option>`
+  })
+
+}
