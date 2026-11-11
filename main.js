@@ -4,7 +4,7 @@
 fetch('./data/comidas-extended.json')          // Ruta al archivo JSON
   .then(response => response.json())  // Convertir la respuesta en JSON
   .then(data => {                     // Aquí tienes acceso al JSON en formato de objeto JS
-    
+  
     console.log(data);    
     comidas = data; 
     mostrarComidas(comidas)                  // Asignar el JSON a la variable comidas
@@ -47,9 +47,10 @@ function mostrarComidas (lista){
     container.innerHTML +=
 `
   <article class= "card">
+  <h2 class= "comida"> ${comida.nombre}</h2>
     <p class= "categoria"> ${comida.categoria}</p>
-    <h2 class= "comida"> ${comida.nombre}</h2>
     <p class= "provincia"> ${comida.provincia}</p>
+    <p class= "ingredientes">Ingredientes:</p>
     <ul>
     ${comida.ingredientes.map( ingrediente=> `<li>${ingrediente}</li>`).join('')}
     </ul>
