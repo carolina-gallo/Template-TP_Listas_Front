@@ -8,7 +8,7 @@ fetch('./data/comidas-extended.json')          // Ruta al archivo JSON
     console.log(data);    
     comidas = data; 
     mostrarComidas(comidas)                  // Asignar el JSON a la variable comidas
-    actualizarFiltros()
+    actualizarfiltros()
   })
   .catch(error => {                   // Manejo de errores al leer el archivo JSON
     console.error('Error al leer el archivo JSON:', error);
@@ -130,9 +130,13 @@ agregarIngredienteBtn.addEventListener ("click", () => {
 
 function actualizarfiltros () {
   let categorias = []
+  let provincias = []
   comidas.forEach (comida => {
     if( !categorias.includes(comida.categoria)) {
     categorias.push(comida.categoria)
+    }
+    if( !provincias.includes(comida.provincia)){
+      provincias.push
     }
   })
 
