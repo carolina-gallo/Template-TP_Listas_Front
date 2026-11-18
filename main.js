@@ -122,7 +122,7 @@ busqueda.addEventListener("input", buscar)
 const agregarIngredienteBtn = document.getElementById ("agregaringrediente")
 const ingredientesContainer = document.querySelector(".contenedor-ingredientes")
 
-agregarIngredienteBtn.addEventListener ("click", () => {
+agregarIngredienteBtn.addEventListener ("click", (e) => {
 
   ingredientesContainer.innerHTML += 
    '<input type="text" class="ingrediente" placeholder="Agregar ingrediente" required>'
@@ -136,12 +136,14 @@ function actualizarfiltros () {
     categorias.push(comida.categoria)
     }
     if( !provincias.includes(comida.provincia)){
-      provincias.push
+      provincias.push(comida.provincia)
     }
   })
 
   categorias.forEach (categoria=> {
   filtrosporcategoria.innerHTML += `<option value="${categoria}">${categoria}</option>`
   })
-
+  provincias.forEach (provincia=>{
+    filtrosporProvincia.innerHTML += `<option value="${provincia}">${provincia}</option>`
+  })
 }
