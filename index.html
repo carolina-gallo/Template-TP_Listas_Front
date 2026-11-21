@@ -9,41 +9,41 @@
 </head>
 <body>
     <header>
-      <input type="search" id="buscador" placeholder="Buscar el nombre de tu comida">
-      <select id="filtrosporcategoria">
+      <input type="search" class="buscador" id="buscador" placeholder="Buscar el nombre de tu comida...">
+      
+      <select class="filtros" id="filtrosporcategoria">
         <option value = "">Todas las Categorias</option>
       </select>
 
-      <select id="filtrosporProvincia">
+      <select class="filtros" id="filtrosporProvincia">
         <option value = "">Todas las Provincias</option>
       </select>
-      <!-- Para filtros y navegacion -->
     </header>
 
     <main class="comida-container" id="comidaContainer">
-        <!-- Contenido Dinamico -->
     </main>     
 
     <section class="addFood">
-      <form id="formdenuevacomida">
+      <form class="form" id="formdenuevacomida">
+        <p class="titulo">Añadir una comida</p>
         <label for="nombre"></label>
-        <input type="text" name="nombre" placeholder="Ingrese el nombre de su comida"> 
+        <input type="text" name="nombre" class="catyprovynom" placeholder="Ingrese el nombre de su comida"> 
 
         <label for="categoria"></label>
-        <input type="text" name="categoria" placeholder="Ingrese su categoria"> 
+        <input class="catyprovynom" type="text" name="categoria" placeholder="Ingrese su categoria"> 
 
         <label for="provincia"></label>
-        <input type="text" name="provincia" placeholder="Ingrese la provincia"> 
+        <input class="catyprovynom" type="text" name="provincia" placeholder="Ingrese la provincia"> 
 
+        <p class="textoingredientes">Ingredientes:</p>
         <label for="ingredientes"></label>
         <div class="contenedor-ingredientes">
-          <input type="text" name="ingredientes" placeholder="Agregar ingrediente">
+          <input class="ingrediente" type="text" name="ingredientes" placeholder="Agregar ingrediente">
         </div>
-        <button type="button" id="agregaringrediente" class="ingrediente">Agregar ingrediente</button>
+        <button class="masingrediente" type="button" id="agregaringrediente" class="ingrediente"><p class="mas">+ </p>Agregar ingrediente</button>
 
-        <button type="submit">Crear comida</button>
+        <button class="crear" type="submit">Crear</button>
       </form>
-      <!-- Para el form para agregar comida -->
     </section>
 
     <script type="module" src="./main.js"></script>

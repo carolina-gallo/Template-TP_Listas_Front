@@ -7,41 +7,222 @@
 .comida-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
   align-items: flex-start;
+  padding-left: 2%;
+  padding-right: 2%;
+  gap: 4%;
 
   background-color: #be8769;
 }
 
-
 .card{
   width: 22%;
   aspect-ratio: 1/1;
-  background-color: #eecab9;
-  margin-top: 10vh;
-  border: 0.4vh rgb(122, 62, 62) solid;
+  background-color: #ecc8b7;
+  margin-top: 4%;
+  border: 0.4vh #412f26 solid;
   border-radius: 10%;
   padding: 1rem;
 }
 
 ul{
   list-style: inside;
-
 }
 
 .ingredientes {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: bold;
-  margin-top: 1%;
-  margin-bottom: 1%;
+  font-family: cursive;
+  margin-top: 1.5%;
+  margin-bottom: 1.5%;
 }
 
 .comida{
-  font-size: 2rem;
+  font-size: 2.5rem;
+  font-family: cursive;
+  font-weight: 900;
   width: 100%;
   height: auto;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.argentina {
+  height: 1.8rem;
+}
+
+.provinciaymetodo {
+  font-size: 1.8rem;
+  font-family: cursive;
+}
+
+.ingr {
+  font-size: 1rem;
+  font-family: cursive;
+}
+
+header {
+  width: 100%;
+  height: 7rem;
+  padding-left: 2%;
+  padding-right: 2%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  background-color: #be8769;
+}
+
+.buscador {
+  width: 75%;
+  padding-left: 1%;
+  padding-right: 1%;
+  height: 55%;
+  border-radius: 30rem;
+  outline: none;
+  border: 0.4vh #634739 solid;
+  background-color: #634739;
+  color: white;
+  font-size: 1.5rem;
+  font-family: cursive;
+}
+
+.buscador::placeholder {
+  color: white;
+  font-size: 1.5rem;
+  font-family: cursive;
+}
+
+.filtros {
+  width: 12%;
+  padding-left: .1%;
+  padding-right: .1%;
+  height: 55%;
+  border-radius: 1.5rem;
+  outline: none;
+  border: 0.4vh #412f26 solid;
+  background-color: #412f26;
+  color: white;
+  font-size: 1.2rem;
+  font-family: cursive;
+}
+
+.addFood {
+  height: auto;
+  min-height: 50rem;
+  padding: 4%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #be8769;
+}
+
+.form {
+  height: auto;
+  min-height: 40rem;
+  width: 40%;
+  background-color: #fae3d8;
+  border-radius: 2rem;
+  border: 0.3vh #7a5e4f solid;
+  padding-top: 1.7rem;
+  padding-bottom: 1.7rem;
+  padding-right: 4%;
+  padding-left: 4%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.titulo {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1rem;
+  font-size: 3rem;
+  font-family: cursive;
+  font-weight: 900;
+  margin-bottom: 4%;
+  color: #412f26;
+}
+
+.catyprovynom {
+  width: 100%;
+  height: 3.5rem;
+  border-bottom: 0.3vh #412f26 solid;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  margin-bottom: 5%;
+  background-color: #fae3d8;
+  font-family: cursive;
+  font-size: 1.5rem;
+  color: #412f26;
+  outline: none;
+}
+
+.contenedor-ingredientes {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.ingrediente {
+  width: 48%;
+  height: 3.2rem;
+  border-bottom: 0.3vh #412f26 solid;
+  background-color: #fae3d8;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  margin-bottom: 2%;
+  font-family: cursive;
+  font-size: 1.2rem;
+  color: #412f26;
+  outline: none;
+}
+
+.textoingredientes{
+  width: 100%;
+  font-family: cursive;
+  font-size: 1.3rem;
+  color: #412f26;
+  margin-bottom: 1%;
+  margin-top: 2%;
+  font-weight: 800;
+}
+
+.masingrediente {
+  align-self: flex-start;
+  background-color: #fae3d8;
+  border: none;
+  color: #805f4f;
+  font-family: cursive;
+  font-size: 0.8rem;
+  margin-bottom: 4%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  gap: 4%;
+  outline: none;
+}
+
+.mas {
+  font-size: 1rem;
+}
+
+.crear {
+  width: 27%;
+  height: 3.6rem;
+  background-color: #412f26;
+  border-radius: 2rem;
+  border: none;
+  font-family: cursive;
+  font-size: 2rem;
+  color: white;
 }

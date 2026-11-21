@@ -20,27 +20,6 @@ let comidas = [];
 
 const container = document.getElementById('comidaContainer');
 
-/*
-let i = 0;
- 
-function mostrarComidas(){
-  while (i < comidas.length){
-    container.innerHTML +=
-
-  `
-  <article class= "card">
-  <h2 class= "comida"> ${comidas[i].nombre} </h2>
-  <p class= "categoria"> ${comidas[i].categoria} </p>
-  <p class= "provincia"> ${comidas[i].provincia} </p>
-  <p class= "ingredientes"> Ingredientes: ${comidas[i].ingredientes}</p>
-  </article>
-  ` 
-  i++
-}
-}
-mostrarComidas()
-*/
-
 function mostrarComidas (lista){
     container.innerHTML=""
   lista.forEach (comida => {
@@ -48,11 +27,11 @@ function mostrarComidas (lista){
 `
   <article class= "card">
   <h2 class= "comida"> ${comida.nombre}</h2>
-    <p class= "categoria"> ${comida.categoria}</p>
-    <p class= "provincia"> ${comida.provincia}</p>
+    <p class= "provinciaymetodo"> <img class= "argentina" src="metodo.png" alt="metodo"> ${comida.categoria}</p>
+    <p class= "provinciaymetodo"> <img class= "argentina" src="ubicacion.png" alt="argentina"> ${comida.provincia}</p>
     <p class= "ingredientes">Ingredientes:</p>
     <ul>
-    ${comida.ingredientes.map( ingrediente=> `<li>${ingrediente}</li>`).join('')}
+    ${comida.ingredientes.map( ingrediente=> `<li class="ingr">${ingrediente}</li>`).join('')}
     </ul>
   </article>
   `
